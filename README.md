@@ -151,7 +151,7 @@ We're using `knex` to generate our SQL
 | deleteCard()         | delete | post | /api/cards/:cardId/delete                |
 
 ### Standards For Creating New Components
-- Each new Component should be created in a separate file where possible.
+- Each new Component should be created in its own file where possible.
 
 - Large Component files should be split up into new subcomponent files.
 
