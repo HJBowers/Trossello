@@ -1,6 +1,7 @@
 import React from 'react'
 import CardName from './CardName'
 import Icon from '../../Icon'
+import './CardHeader.sass'
 
 const CardHeader = ({card, list}) => {
   return <div className="BoardShowPage-CardModal-CardHeader">

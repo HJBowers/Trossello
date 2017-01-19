@@ -95,7 +95,7 @@ export default class CardComment extends Component {
         </span>
       </div>
       {commentBox}
-      <div className="CardModal-CardComment-border"/>
+      <div className="BoardShowPage-CardModal-CardComment-border"/>
     </div>
   }
 }

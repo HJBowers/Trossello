@@ -4,7 +4,7 @@ import Icon from '../Icon'
 import Form from '../Form'
 import Button from '../Button'
 import DialogBox from '../DialogBox'
-import ColorBox from '../ColorBox'
+import ColorBoxGroup from '../ColorBoxGroup'
 import commands from '../../commands'
 import './CreateBoardPopover.sass'
 
@@ -20,15 +20,16 @@ class CreateBoardPopover extends Component {
       color: '',
     }
     this.onSubmit = this.onSubmit.bind(this)
+    this.updateColor = this.updateColor.bind(this)
   }
 
   componentDidMount(){
     this.refs.name.focus()
   }
 
-  updateColor(color, event){
+  updateColor(event){
     event.preventDefault()
-    this.setState({color: color})
+    this.setState({color: event.target.attributes.color.value})
   }
 
   onSubmit(event){
@@ -53,10 +54,6 @@ class CreateBoardPopover extends Component {
   }
 
   render(props){
-    const colorBoxes = colors.map(color =>
-      <ColorBox key={color} color={color} onClick={this.updateColor.bind(this, color)} />
-    )
-
     return <DialogBox
       heading="Create A Board"
       onClose={this.props.onClose}
@@ -68,7 +65,9 @@ class CreateBoardPopover extends Component {
           <input type="text" ref="name" className="CreateBoardPopover-boardName-input"/>
         </label>
         <div className="CreateBoardPopover-createBackgroundColor">
-          {colorBoxes}
+          <ColorBoxGroup
+            onClick={this.updateColor}
+          />
         </div>
         <label>
           <input

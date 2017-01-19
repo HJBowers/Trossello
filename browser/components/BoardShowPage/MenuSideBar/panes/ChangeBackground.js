@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import ColorBox from '../../../ColorBox'
+import ColorBoxGroup from '../../../ColorBoxGroup'
 import commands from '../../../../commands'
 
 export default class ChangeBackground extends Component {
@@ -20,28 +20,11 @@ export default class ChangeBackground extends Component {
   }
 
   render () {
-    const colorBoxes = colors.map(color =>
-      <ColorBox key={color}
-        color={color}
-        onClick={this.updateColor}
-        className="BoardShowPage-MenuSideBar-ChangeBackgroundPane-box"
-      />
-    )
-
     return <div className="BoardShowPage-MenuSideBar-ChangeBackgroundPane-container">
-      {colorBoxes}
+      <ColorBoxGroup
+        onClick={this.updateColor}
+        board={this.props.board}
+      />
     </div>
   }
 }
-
-const colors = [
-  "#0079bf",
-  "#d8a359",
-  "#70a95d",
-  "#bc6858",
-  "#9d7cae",
-  "#d478a4",
-  "#6cc885",
-  "#30bbd3",
-  "#98a0a4"
-]

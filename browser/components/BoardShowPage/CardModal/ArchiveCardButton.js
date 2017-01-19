@@ -16,6 +16,7 @@ export default class ArchiveCardButton extends Component {
   }
   render(){
     return <ConfirmationButton
+      className="BoardShowPage-CardModal-ArchiveCardButton"
       onConfirm={this.archiveCard}
       buttonName="Archive"
       title='Archive Card?'

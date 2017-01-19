@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import Link from '../../Link'
 import Icon from '../../Icon'
+import ColorLabel from './ColorLabel'
 import './TextLabel.sass'
 
 export default class TextLabel extends Component {
@@ -18,13 +19,11 @@ export default class TextLabel extends Component {
         <Icon type="check"/>
       </div> : null
 
-    return <div className="Card-TextLabel" style={{backgroundColor: color}}>
-      <div className="Card-TextLabel-text">
-        {text}
-      </div>
-      {check}
-    </div>
-
+    return <ColorLabel
+      className="Card-ColorLabel-TextLabel"
+      color={color}
+      checked={checked}
+      text={text}
+    />
   }
-
 }

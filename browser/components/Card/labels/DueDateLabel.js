@@ -68,7 +68,7 @@ export default class DueDateLabel extends Component {
 
     let longDate = status.preText
     const dueDatePopover = <DueDateLabelPopover card={card}/>
-    className += "Card-DueDateLabel-due-large"
+    className += " Card-DueDateLabel-due-large"
 
     return <LabelSection heading="Due Date">
       <PopoverMenuButton

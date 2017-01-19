@@ -375,18 +375,14 @@ class BoardShowPage extends Component {
       />
     })
 
-    const style = {
-      backgroundColor: board.background_color,
-    }
-
     const renameBoardDropdown =
       <RenameBoardDropdown
         board={this.props.board}
       />
 
     let faviconColor = board.background_color
-    const className = `BoardShowPage ${this.state.sideBarOpen ? 'BoardShowPage-sideBarOpen' : ''}`
-    return <Layout className={className} style={style} faviconColor={faviconColor} >
+    const className = `BoardShowPage BoardShowPage-${board.background_color} ${this.state.sideBarOpen ? 'BoardShowPage-sideBarOpen' : ''}`
+    return <Layout className={className} faviconColor={faviconColor} >
       {cardModal}
       <div className="BoardShowPage-container">
         <PageHeader board={board} toggleSideBar={this.toggleSideBar} sideBarOpen={this.state.sideBarOpen} renameBoardDropdown={renameBoardDropdown}/>

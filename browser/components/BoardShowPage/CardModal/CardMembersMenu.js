@@ -60,12 +60,12 @@ export default class CardMembersMenu extends Component {
           placeholder='Search Member'
           className='BoardShowPage-CardModal-CardMembersMenu-search'
         />
-        <div className='BoardShowPage-CardModal-CardMembersMenu-Users'>
-          <div className='BoardShowPage-CardModal-CardMembersMenu-Users-header'>
+        <div className='BoardShowPage-CardModal-CardMembersMenu-users'>
+          <div className='BoardShowPage-CardModal-CardMembersMenu-users-header'>
             Board Members
           </div>
           <DialogBox.Divider />
-          <div className='BoardShowPage-CardModal-CardMembersMenu-Users-images'>
+          <div className='BoardShowPage-CardModal-CardMembersMenu-users-images'>
             {boardUserImages}
           </div>
         </div>
