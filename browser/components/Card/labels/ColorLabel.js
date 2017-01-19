@@ -11,17 +11,18 @@ export default class ColorLabel extends Component {
   }
 
   render(){
+    console.log(this.props)
     const { text, checked, color } = this.props
     const check = checked ?
-      <div className="Card-TextLabel-check">
+      <div className="Card-ColorLabel-check">
         <Icon type="check"/>
       </div> : null
     const className = this.props.className
-    ? `Card-ColorLabel-${color} ${this.props.className}`
-    : `Card-ColorLabel-${color}`
+    ? `Card-ColorLabel Card-ColorLabel-${color} ${this.props.className}`
+    : `Card-ColorLabel Card-ColorLabel-${color}`
 
     return <div className={className}>
-      <div className="Card-ColorLabel-Text">
+      <div className="Card-ColorLabel-text">
         {text}
       </div>
       {check}

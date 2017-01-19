@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import ActionsMenuPane from '../../ActionsMenuPane'
 import Link from '../../../Link'
+import Icon from '../../../Icon'
 import TextLabel from '../../../Card/labels/TextLabel'
 import commands from '../../../../commands'
 
@@ -39,7 +40,10 @@ export default class MainLabelPanel extends Component {
         {boardLabels}
       </div>
       <div className="BoardShowPage-CardModal-LabelMenu-controls">
-        <Link className="BoardShowPage-CardModal-LabelMenu-button" onClick={this.props.goToPane('Create Label Pane')}>
+        <Link
+          className="BoardShowPage-CardModal-LabelMenu-button"
+          onClick={this.props.goToPane('Create Label Pane')}
+        >
           Create Label
         </Link>
       </div>
@@ -51,9 +55,22 @@ const LabelRow = (props) => {
   const { label, onClick, onEdit, checked } = props
 
   return <div className="BoardShowPage-CardModal-LabelMenu-LabelRow">
-    <div className="BoardShowPage-CardModal-LabelMenu-LabelRow-box" onClick={onClick}>
-      <TextLabel key={label.id} color={label.color} text={label.text} checked={checked}/>
+    <div
+      className="BoardShowPage-CardModal-LabelMenu-LabelRow-box"
+      onClick={onClick}
+    >
+      <TextLabel
+        key={label.id}
+        color={label.color}
+        text={label.text}
+        checked={checked}
+      />
     </div>
-    <Link onClick={onEdit} className="BoardShowPage-CardModal-LabelMenu-LabelRow-edit"><Icon type="pencil" /></Link>
+    <Link
+      onClick={onEdit}
+      className="BoardShowPage-CardModal-LabelMenu-LabelRow-edit"
+    >
+      <Icon type="pencil" />
+    </Link>
   </div>
 }

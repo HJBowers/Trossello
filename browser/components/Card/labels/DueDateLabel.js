@@ -5,6 +5,7 @@ import moment from 'moment'
 import PopoverMenuButton from '../../PopoverMenuButton'
 import DueDateLabelPopover from './DueDateLabelPopover'
 import LabelSection from './LabelSection'
+import ColorLabel from './ColorLabel'
 import './DueDateLabel.sass'
 
 export default class DueDateLabel extends Component {
@@ -16,59 +17,63 @@ export default class DueDateLabel extends Component {
   dueStatus() {
     const dueDate = moment(this.props.card.due_date)
     const pastDue = moment().isAfter(dueDate)
-    const status = {
-      className: "",
+    const labelData = {
       preText: "",
-      postText: ""
+      postText: "",
+      color: "grey"
     }
 
     if (pastDue) {
       if (dueDate.isBefore(moment().subtract(1, "days"), "day")) {
-        status.className = "Card-DueDateLabel-due-past-long"
-        status.preText = dueDate.format("MMM D [at] h:mm")
-        status.postText = "(past due)"
+        labelData.color = 'paleRed'
+        labelData.preText = dueDate.format("MMM D [at] h:mm")
+        labelData.postText = "(past due)"
       } else {
-        status.className = "Card-DueDateLabel-due-past-recent"
-        status.preText = dueDate.calendar(moment(), "D hh:mm A");
-        status.postText = "(recently past due)"
+        labelData.color = 'red'
+        labelData.preText = dueDate.calendar(moment(), "D hh:mm A");
+        labelData.postText = "(recently past due)"
       }
     } else {
       if (dueDate.isAfter(moment().add(1, "days"), "day")) {
-        status.className = "Card-DueDateLabel-due-future-distant"
-        status.preText = dueDate.format("MMM D [at] h:mm")
+        labelData.color = 'grey'
+        labelData.preText = dueDate.format("MMM D [at] h:mm")
       } else {
-        status.className = "Card-DueDateLabel-due-future-near"
-        status.preText = dueDate.calendar(moment(), "D hh:mm A");
-        status.postText = "(due soon)"
+        labelData.color = 'orange'
+        labelData.preText = dueDate.calendar(moment(), "D hh:mm A");
+        labelData.postText = "(due soon)"
       }
     }
     if (this.props.card.complete){
-      status.className = "Card-DueDateLabel-due-complete"
-      status.postText = ""
+      labelData.color = 'green'
+      labelData.postText = ""
     }
-    return status
+    return labelData
   }
 
   render(){
     const { card, shownOn } = this.props
-    let status = this.dueStatus()
-    let className = `Card-DueDateLabel-due ${status.className || ''}`
-    let renderBadge
+    const labelData = this.dueStatus()
+    const className = `Card-DueDateLabel-small`
 
     if (shownOn === "front"){
-      let shortDate = moment(card.due_date).format("MMM D")
-      return <div className={className}>
+      const shortDate = moment(card.due_date).format("MMM D")
+      const dueDateContent= <div className={className}>
         <Icon
           type="clock-o"
-          className="Card-DueDateLabel-due-dueIcon"
+          className="Card-DueDateLabel-Icon"
         />
-        <span className="Card-DueDateLabel-due-dueText">{shortDate}</span>
+        <span className="Card-DueDateLabel-text">{shortDate}</span>
       </div>
+
+      return <ColorLabel
+        className="Card-ColorLabel-smallDueDateLabel"
+        color={labelData.color}
+        text={dueDateContent}
+      />
     }
 
-    let longDate = status.preText
+    let longDate = labelData.preText
     const dueDatePopover = <DueDateLabelPopover card={card}/>
-    className += " Card-DueDateLabel-due-large"
 
     return <LabelSection heading="Due Date">
       <PopoverMenuButton
@@ -77,11 +82,10 @@ export default class DueDateLabel extends Component {
         popover={dueDatePopover}
         className="Card-DueDateLabel-container"
       >
-        <div className={className}>
-          <span className="Card-DueDateLabel-due-dueText">
-            {longDate + ' ' + status.postText}
-          </span>
-        </div>
+      <ColorLabel
+        color={labelData.color}
+        text={longDate + ' ' + labelData.postText}
+      />
       </PopoverMenuButton>
     </LabelSection>
   }

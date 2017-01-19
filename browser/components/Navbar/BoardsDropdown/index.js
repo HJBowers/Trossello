@@ -5,7 +5,7 @@ import PopoverMenuButton from '../../PopoverMenuButton'
 import CreateBoardPopover from '../CreateBoardPopover'
 import Boards from './Boards'
 import ToggleBoardsDropdownLock from './ToggleBoardsDropdownLock'
-import commands from '../../commands'
+import commands from '../../../commands'
 import './index.sass'
 
 class BoardsDropdown extends Component {
