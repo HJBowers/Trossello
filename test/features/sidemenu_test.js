@@ -67,11 +67,11 @@ describe('Side Menu Tests', () => {
           this.browser.visit('/boards/101')
           this.browser.wait(until.elementLocated(By.className('BoardShowPage-menuButton')), 2000).click()
           this.browser.wait(until.elementLocated(By.linkText('Activity')), 2000).click()
-          this.browser.wait(until.elementLocated(By.className('BoardShowPage-MenuSideBar-ActivityPanel')), 2000)
+          this.browser.wait(until.elementLocated(By.className('BoardShowPage-MenuSideBar-BoardActivity')), 2000)
           this.browser.findElement(By.className('Icon fa fa-arrow-left'), 2000).click()
           this.browser.sleep(200)
           this.browser.wait(until.elementLocated(By.linkText('View all activity...')), 2000).click()
-          this.browser.wait(until.elementLocated(By.className('BoardShowPage-MenuSideBar-ActivityPanel')), 2000)
+          this.browser.wait(until.elementLocated(By.className('BoardShowPage-MenuSideBar-BoardActivity')), 2000)
           this.browser.then(_ => done())
         })
 
