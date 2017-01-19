@@ -3,15 +3,16 @@ import ReactDOM from 'react-dom'
 import Form from '../Form'
 import Link from '../Link'
 import Icon from '../Icon'
-import Card from './Card'
+import Card from '../Card'
 import NewCardForm from './NewCardForm'
 import boardStore from '../../stores/boardStore'
 import autosize from 'autosize'
 import ToggleComponent from '../ToggleComponent'
 import Button from '../Button'
 import PopoverMenuButton from '../PopoverMenuButton'
-import ListActionsMenu from '../ListActionsMenu'
+import ListActionsMenu from './ListActionsMenu'
 import commands from '../../commands'
+import './List.sass'
 
 export default class List extends Component {
 
@@ -85,7 +86,7 @@ export default class List extends Component {
         onSave={this.incNewCardFormOrder}
       />
     } else {
-      newCardLink = <Link onClick={this.creatingCard} className="BoardShowPage-create-card-link" >Add a card...</Link>
+      newCardLink = <Link onClick={this.creatingCard} className="BoardShowPage-List-createCardLink" >Add a card...</Link>
     }
 
     const cardNodes = cards.map((card, index) =>
@@ -114,17 +115,17 @@ export default class List extends Component {
 
     return <div className='BoardShowPage-List' data-list-id={list.id}>
       <div className={className}>
-        <div className="BoardShowPage-ListHeader"
-          className="BoardShowPage-ListHeader"
+        <div
+          className="BoardShowPage-List-header"
           draggable
           onDragStart={this.props.onDragStart}
         >
           <ListName list={list}/>
         </div>
-        <PopoverMenuButton className="BoardShowPage-ListOptions" type="invisible" popover={listActionsMenu}>
+        <PopoverMenuButton className="BoardShowPage-List-options" type="invisible" popover={listActionsMenu}>
           <Icon type="ellipsis-h" />
         </PopoverMenuButton>
-        <div ref="cards"className="BoardShowPage-cards">
+        <div ref="cards"className="BoardShowPage-List-cards">
           {cardNodes}
         </div>
         {newCardLink}
