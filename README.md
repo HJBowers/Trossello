@@ -150,6 +150,22 @@ We're using `knex` to generate our SQL
 | updateCard()         | update | post | /api/cards/:cardId                       |
 | deleteCard()         | delete | post | /api/cards/:cardId/delete                |
 
+### React Component Folder Standards
+Each Component should exist in a separate file where possible.
+
+Large Component files should be split up into sub components.
+
+A Component with multiple sub components should be reorganized into a Component folder:
+  - The component sharing the folder name should be renamed to index.js and have an accompanying index.sass file.
+
+  - Everything inside the component Directory should only be rendered as a sub component of the index component.
+
+  - Components with many sub components of the same type (ex: menu panes) can have a Directory for organizing those components with a lower case name.
+
+Component file and Directory names should be in UpperCamelCase.
+
+Class names for Components inside of a Component directory should start with the Component directory name. (ex: components/BoardShowPage/CardModal/LabelMenu -> .BoardShowPage-CardModal-LabelMenu)
+
 ### Contributors
 
 - [deadlyicon](https://github.com/deadlyicon)
