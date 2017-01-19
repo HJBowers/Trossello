@@ -28,7 +28,7 @@ export default class CardDescription extends ToggleComponent {
     if (this.state.open){
       return <ContentForm
         ref="descriptionForm"
-        className="CardModal-CommentEditForm CardModal-CardDescription"
+        className="BoardShowPage-CardModal-CommentEditForm CardModal-CardDescription"
         onSave={this.updateDescription}
         onCancel={this.close}
         submitButtonName="Save"
@@ -37,23 +37,23 @@ export default class CardDescription extends ToggleComponent {
     }
 
     if (card.description === ""){
-      return <Link onClick={this.open} className="CardModal-CardDescription">
+      return <Link onClick={this.open} className="BoardShowPage-CardModal-CardDescription">
         <Icon type="align-justify" />&nbsp;
         <span>Edit the description</span>
       </Link>
     }
 
-    return <div className="CardModal-CardDescription">
-      <div className="CardModal-CardDescription-header">
+    return <div className="BoardShowPage-CardModal-CardDescription">
+      <div className="BoardShowPage-CardModal-CardDescription-header">
         Description
         <Link
-          className="CardModal-CardDescription-header-edit"
+          className="BoardShowPage-CardModal-CardDescription-header-edit"
           onClick={this.open}
         >
           Edit
         </Link>
       </div>
-      <div className="CardModal-CardDescription-content">{card.description}</div>
+      <div className="BoardShowPage-CardModal-CardDescription-content">{card.description}</div>
     </div>
   }
 }

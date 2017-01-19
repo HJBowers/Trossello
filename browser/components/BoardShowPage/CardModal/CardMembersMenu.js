@@ -52,20 +52,20 @@ export default class CardMembersMenu extends Component {
 
     return <DialogBox onClose={this.props.onClose}
       heading='Members'
-      className='CardModal-CardMembersMenu'
+      className='BoardShowPage-CardModal-CardMembersMenu'
     >
-      <div className='CardModal-CardMembersMenu-content'>
+      <div className='BoardShowPage-CardModal-CardMembersMenu-content'>
         <input ref='searchMembers'
           name='searchMembers'
           placeholder='Search Member'
-          className='CardModal-CardMembersMenu-search'
+          className='BoardShowPage-CardModal-CardMembersMenu-search'
         />
-        <div className='CardModal-CardMembersMenu-Users'>
-          <div className='CardModal-CardMembersMenu-Users-header'>
+        <div className='BoardShowPage-CardModal-CardMembersMenu-Users'>
+          <div className='BoardShowPage-CardModal-CardMembersMenu-Users-header'>
             Board Members
           </div>
           <DialogBox.Divider />
-          <div className='CardModal-CardMembersMenu-Users-images'>
+          <div className='BoardShowPage-CardModal-CardMembersMenu-Users-images'>
             {boardUserImages}
           </div>
         </div>
@@ -77,10 +77,10 @@ export default class CardMembersMenu extends Component {
 const UserAvatar = (props) => {
   const { user, onClick, isMember } = props
   const checkmark = isMember
-    ? <Icon type="check-square" className="CardModal-CardMembersMenu-Users-images-User-checkmark" />
+    ? <Icon type="check-square" className="BoardShowPage-CardModal-CardMembersMenu-Users-images-User-checkmark" />
     : null
 
-  return <Link onClick={onClick} className='CardModal-CardMembersMenu-Users-images-User-avatar'>
+  return <Link onClick={onClick} className='BoardShowPage-CardModal-CardMembersMenu-Users-images-User-avatar'>
     <Avatar src={user.avatar_url} />
     {checkmark}
   </Link>

@@ -24,7 +24,7 @@ export default class DeleteCardButton extends Component {
       buttonName='Delete'
       title='Delete Card?'
       message='All actions will be removed from the activity feed and you won’t be able to re-open the card. There is no undo.'
-      className='CardModal-Controls-delete'
+      className='BoardShowPage-CardModal-Controls-delete'
     >
       <Icon type="trash" /> Delete
     </ConfirmationButton>

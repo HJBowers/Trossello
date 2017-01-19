@@ -56,7 +56,7 @@ export default class CardModal extends Component {
     const { session } = this.context
     const { card, list, board } = this.props
     const archivedBanner = card.archived ?
-      <div className='CardModal-archivedBanner'>
+      <div className='BoardShowPage-CardModal-archivedBanner'>
         <Icon type="archive" /> This card is archived
       </div> : null
 
@@ -79,14 +79,14 @@ export default class CardModal extends Component {
         ? <TextLabelContainer card={card} board={board} labelPanel={labelPanel}/>
         : null
 
-    return <div className="CardModal">
+    return <div className="BoardShowPage-CardModal">
       <CardModalShroud onClose={this.props.onClose}>
         {archivedBanner}
-        <div className="CardModal-columns">
-          <div className="CardModal-content">
+        <div className="BoardShowPage-CardModal-columns">
+          <div className="BoardShowPage-CardModal-content">
             <CardHeader card={card} list={list}/>
-            <div className="CardModal-body">
-              <div className="CardModal-body-badges">
+            <div className="BoardShowPage-CardModal-body">
+              <div className="BoardShowPage-CardModal-body-badges">
                 {cardMembers}
                 {cardLabels}
                 {dueDateBadge}

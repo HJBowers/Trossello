@@ -3,17 +3,17 @@ import CardName from './CardName'
 import Icon from '../../Icon'
 
 const CardHeader = ({card, list}) => {
-  return <div className="CardModal-CardHeader">
-    <div className="CardModal-CardHeader-header">
-      <div className="CardModal-CardHeader-header-icon">
+  return <div className="BoardShowPage-CardModal-CardHeader">
+    <div className="BoardShowPage-CardModal-CardHeader-title">
+      <div className="BoardShowPage-CardModal-CardHeader-title-icon">
         <Icon type="window-maximize" size='1'/>
       </div>
-      <div className="CardModal-CardHeader-header-title">
+      <div className="BoardShowPage-CardModal-CardHeader-title-text">
         <CardName card={card} />
       </div>
     </div>
-    <div className="CardModal-CardHeader-list">
-        in list <span className="CardModal-CardHeader-list-name">
+    <div className="BoardShowPage-CardModal-CardHeader-list">
+        in list <span className="BoardShowPage-CardModal-CardHeader-list-name">
           {list.name}
         </span>
     </div>

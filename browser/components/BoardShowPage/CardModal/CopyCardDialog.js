@@ -137,7 +137,7 @@ export default class CopyCardDialog extends Component {
 
     const boardSelector =
       <BigSelect labelText='Board'
-        className="CopyCardDialog-boardSelector"
+        className="BoardShowPage-CardModal-CopyCardDialog-boardSelector"
         spanText={selectedBoard.name}
         onChange={this.selectBoardHandler}
         optionValue={selectedBoard.id}
@@ -145,7 +145,7 @@ export default class CopyCardDialog extends Component {
 
     const listSelector =
       <BigSelect labelText='List'
-        className="CopyCardDialog-listSelector"
+        className="BoardShowPage-CardModal-CopyCardDialog-listSelector"
         spanText={selectedList.name}
         onChange={this.selectListHandler}
         optionValue={selectedList.id}
@@ -153,13 +153,13 @@ export default class CopyCardDialog extends Component {
 
     const positionSelector =
       <BigSelect labelText='Position'
-        className="CopyCardDialog-positionSelector"
+        className="BoardShowPage-CardModal-CopyCardDialog-positionSelector"
         spanText={this.state.order + 1}
         onChange={this.selectPositionHandler}
         optionValue={this.state.order}
         selectOptions={positionList}/>
 
-      return <DialogBox className='CopyCardDialog' heading='Copy Card' onClose={this.props.onClose}>
+      return <DialogBox className='BoardShowPage-CardModal-CopyCardDialog' heading='Copy Card' onClose={this.props.onClose}>
       <Form onSubmit={this.copyCardHandler}>
         <label>Title</label>
         <textarea
@@ -169,7 +169,7 @@ export default class CopyCardDialog extends Component {
         />
         <p> Copy to ...</p>
         {boardSelector}
-        <div className='CopyCardDialog-dropdownWrapper'>
+        <div className='BoardShowPage-CardModal-CopyCardDialog-dropdownWrapper'>
         {listSelector}
         {positionSelector}
         </div>

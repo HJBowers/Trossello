@@ -19,23 +19,23 @@ const CardModalControls = ({board, list, card, closeModal, labelPanel}) => {
     <ArchiveCardButton card={card} />
   const cardMembersMenu = <CardMembersMenu board={board} card={card} />
 
-  return <div className="CardModal-Controls">
-    <div className="CardModal-Controls-title">Add</div>
+  return <div className="BoardShowPage-CardModal-Controls">
+    <div className="BoardShowPage-CardModal-Controls-title">Add</div>
     <PopoverMenuButton
-      className="CardModal-Controls-members"
+      className="BoardShowPage-CardModal-Controls-members"
       popover={cardMembersMenu}
     >
       <Icon type="user" /> Members
     </PopoverMenuButton>
-    <PopoverMenuButton className="CardModal-Controls-label" type="default" popover={labelPanel}>
+    <PopoverMenuButton className="BoardShowPage-CardModal-Controls-label" type="default" popover={labelPanel}>
       <Icon type="tag" /> Labels
     </PopoverMenuButton>
-    <PopoverMenuButton className="CardModal-Controls-label" type="default" popover={dueDate}>
+    <PopoverMenuButton className="BoardShowPage-CardModal-Controls-label" type="default" popover={dueDate}>
       <Icon type="clock-o" /> Due Date
     </PopoverMenuButton>
-    <div className="CardModal-Controls-title">Actions</div>
+    <div className="BoardShowPage-CardModal-Controls-title">Actions</div>
     {toggleOnArchived}
-    <PopoverMenuButton className="CardModal-Controls-copy" type="default" popover={copyCard}>
+    <PopoverMenuButton className="BoardShowPage-CardModal-Controls-copy" type="default" popover={copyCard}>
       <Icon type="files-o" /> Copy
     </PopoverMenuButton>
   </div>

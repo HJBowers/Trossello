@@ -1,10 +1,10 @@
 import React from 'react'
 
 const CardModalShroud = ({onClose, children}) => {
-  return <div className="CardModal-CardModalShroud-container">
-    <div onClick={onClose} className="CardModal-CardModalShroud-shroud"></div>
-    <div className="CardModal-CardModalShroud-stage">
-      <div className="CardModal-CardModalShroud-window">
+  return <div className="BoardShowPage-CardModal-CardModalShroud-container">
+    <div onClick={onClose} className="BoardShowPage-CardModal-CardModalShroud-shroud"></div>
+    <div className="BoardShowPage-CardModal-CardModalShroud-stage">
+      <div className="BoardShowPage-CardModal-CardModalShroud-window">
         {children}
       </div>
     </div>

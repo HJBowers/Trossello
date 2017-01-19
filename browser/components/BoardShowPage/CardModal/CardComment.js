@@ -50,16 +50,16 @@ export default class CardComment extends Component {
     const {comment, users} = this.props
     const user = users.find(user => user.id === comment.user_id)
 
-    const commentTimestamp = <div className="CardModal-CardComment-comment-controls-time">
+    const commentTimestamp = <div className="BoardShowPage-CardModal-CardComment-comment-controls-time">
       <TimeFromNow time={comment.created_at}/>
       {comment.created_at === comment.updated_at ? '' : ' (edited)'}
     </div>
 
     const commentBox = this.state.editing ?
-      <div className="CardModal-CardComment-comment">
+      <div className="BoardShowPage-CardModal-CardComment-comment">
         <ContentForm
           ref="comment"
-          className="CardModal-CommentEditForm"
+          className="BoardShowPage-CardModal-CommentEditForm"
           onSave={this.updateComment}
           onCancel={this.stopEditingComment}
           submitButtonName="Save"
@@ -67,30 +67,30 @@ export default class CardComment extends Component {
         />
       </div>
     :
-      <div className="CardModal-CardComment-comment">
-        <div className="CardModal-CardComment-comment-box">
+      <div className="BoardShowPage-CardModal-CardComment-comment">
+        <div className="BoardShowPage-CardModal-CardComment-comment-box">
           {comment.content}
         </div>
-        <div className="CardModal-CardComment-comment-controls">
+        <div className="BoardShowPage-CardModal-CardComment-comment-controls">
           {commentTimestamp}
-          <span className="CardModal-CardComment-comment-controls-margin">-</span>
-          <Link onClick={this.editComment} className="CardModal-CardComment-comment-controls-edit">
+          <span className="BoardShowPage-CardModal-CardComment-comment-controls-margin">-</span>
+          <Link onClick={this.editComment} className="BoardShowPage-CardModal-CardComment-comment-controls-edit">
             Edit
           </Link>
-          <span className="CardModal-CardComment-comment-controls-margin">-</span>
-          <Link onClick={this.deleteComment} className="CardModal-CardComment-comment-controls-delete">
+          <span className="BoardShowPage-CardModal-CardComment-comment-controls-margin">-</span>
+          <Link onClick={this.deleteComment} className="BoardShowPage-CardModal-CardComment-comment-controls-delete">
             Delete
           </Link>
         </div>
       </div>
 
-    return <div className="CardModal-CardComment">
-      <div className="CardModal-CardComment-user">
+    return <div className="BoardShowPage-CardModal-CardComment">
+      <div className="BoardShowPage-CardModal-CardComment-user">
         <img
-          className="CardModal-CardComment-user-image"
+          className="BoardShowPage-CardModal-CardComment-user-image"
           src={user.avatar_url}
         />
-        <span className="CardModal-CardComment-user-name">
+        <span className="BoardShowPage-CardModal-CardComment-user-name">
           {user.name}
         </span>
       </div>

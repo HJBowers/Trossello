@@ -43,7 +43,7 @@ export default class CardActivity extends Component {
         'metadata' in item ?
           <Activity
             key={item.id}
-            className="CardModal-Activity"
+            className="BoardShowPage-CardModal-Activity"
             activity={item}
             users={board.users}
             board={board}
@@ -57,20 +57,20 @@ export default class CardActivity extends Component {
           />
       )
 
-    return <div className="CardModal-CardActivity">
-      <div className="CardModal-CardActivity-header">
-        <div className="CardModal-CardActivity-header-icon">
+    return <div className="BoardShowPage-CardModal-CardActivity">
+      <div className="BoardShowPage-CardModal-CardActivity-header">
+        <div className="BoardShowPage-CardModal-CardActivity-header-icon">
           <Icon size="2" type="list"/>
         </div>
-        <div className="CardModal-CardActivity-header-title">Activity</div>
+        <div className="BoardShowPage-CardModal-CardActivity-header-title">Activity</div>
         <Link
-          className="CardModal-CardActivity-header-toggle"
+          className="BoardShowPage-CardModal-CardActivity-header-toggle"
           onClick={this.activityToggle}
         >
           {this.state.showingActivity ? 'Hide Details' : 'Show Details'}
         </Link>
       </div>
-      <div className="CardModal-CardActivity-activityLog">
+      <div className="BoardShowPage-CardModal-CardActivity-activityLog">
         {activity}
       </div>
     </div>

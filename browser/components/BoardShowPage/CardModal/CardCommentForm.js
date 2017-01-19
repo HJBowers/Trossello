@@ -26,22 +26,22 @@ export default class CardCommentForm extends Component {
   render(){
     const { session } = this.props
 
-    return <div className="CardModal-CardCommentForm">
-      <div className="CardModal-CardCommentForm-header">
-        <div className="CardModal-CardCommentForm-header-icon">
+    return <div className="BoardShowPage-CardModal-CardCommentForm">
+      <div className="BoardShowPage-CardModal-CardCommentForm-header">
+        <div className="BoardShowPage-CardModal-CardCommentForm-header-icon">
           <Icon size="2" type="comment-o"/>
         </div>
-        <div className="CardModal-CardCommentForm-header-title">
+        <div className="BoardShowPage-CardModal-CardCommentForm-header-title">
           Add Comment
         </div>
       </div>
-      <div className="CardModal-CardCommentForm-body">
-        <div className="CardModal-CardCommentForm-image-container">
-          <img className="CardModal-CardCommentForm-image" src={session.user.avatar_url}></img>
+      <div className="BoardShowPage-CardModal-CardCommentForm-body">
+        <div className="BoardShowPage-CardModal-CardCommentForm-image-container">
+          <img className="BoardShowPage-CardModal-CardCommentForm-image" src={session.user.avatar_url}></img>
         </div>
         <ContentForm
           ref="comment"
-          className="CardModal-CommentEditForm"
+          className="BoardShowPage-CardModal-CommentEditForm"
           onSave={this.addComment}
           submitButtonName="Send"
           placeholder="Write a comment…"

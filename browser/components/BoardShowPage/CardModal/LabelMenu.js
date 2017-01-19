@@ -35,7 +35,7 @@ export default class LabelMenu extends Component {
   render(){
     const { card, board, onClose } = this.props
     return <ActionsMenu
-      className="LabelMenu"
+      className="BoardShowPage-CardModal-LabelMenu"
       defaultPane="Main Label Pane"
       paneProps={{
         state: this.state,
@@ -83,13 +83,13 @@ class MainLabelPanel extends Component {
     return <ActionsMenuPane
       heading="Labels"
       onClose={this.props.onClose}
-      className="LabelMenu-MainLabelPane"
+      className="BoardShowPage-CardModal-LabelMenu-MainLabelPane"
     >
-      <div className="LabelMenu-labels">
+      <div className="BoardShowPage-CardModal-LabelMenu-labels">
         {boardLabels}
       </div>
-      <div className="LabelMenu-controls">
-        <Link className="LabelMenu-button" onClick={this.props.goToPane('Create Label Pane')}>
+      <div className="BoardShowPage-CardModal-LabelMenu-controls">
+        <Link className="BoardShowPage-CardModal-LabelMenu-button" onClick={this.props.goToPane('Create Label Pane')}>
           Create Label
         </Link>
       </div>
@@ -101,11 +101,11 @@ class MainLabelPanel extends Component {
 const LabelRow = (props) => {
   const {label, onClick, onEdit, checked} = props
 
-  return <div className="LabelMenu-LabelRow">
-    <div className="LabelMenu-LabelRow-box" onClick={onClick}>
+  return <div className="BoardShowPage-CardModal-LabelMenu-LabelRow">
+    <div className="BoardShowPage-CardModal-LabelMenu-LabelRow-box" onClick={onClick}>
       <TextLabel key={label.id} color={label.color} text={label.text} checked={checked}/>
     </div>
-    <Link onClick={onEdit} className="LabelMenu-LabelRow-edit"><Icon type="pencil" /></Link>
+    <Link onClick={onEdit} className="BoardShowPage-CardModal-LabelMenu-LabelRow-edit"><Icon type="pencil" /></Link>
   </div>
 }
 
@@ -191,7 +191,7 @@ class CreateLabelPanel extends Component {
       const checked = (this.state.labelColor===color) ? true : false
       return <div
         key={color}
-        className="LabelMenu-CreateLabelPanel-colorbox">
+        className="BoardShowPage-CardModal-LabelMenu-CreateLabelPanel-colorbox">
         <ColorBox
           checked={checked}
           color={color}
@@ -204,7 +204,7 @@ class CreateLabelPanel extends Component {
 
     const deleteButton = this.isEditing() ?
       <ConfirmationButton
-        className="LabelMenu-CreateLabelPanel-button"
+        className="BoardShowPage-CardModal-LabelMenu-CreateLabelPanel-button"
         onConfirm={this.deleteLabel}
         type="danger"
         submit={false}
@@ -221,19 +221,19 @@ class CreateLabelPanel extends Component {
       card={this.props.card}
       onClose={this.props.onClose}
       onBack={this.goBack}
-      className="LabelMenu-CreateLabelPanel"
+      className="BoardShowPage-CardModal-LabelMenu-CreateLabelPanel"
     >
       <Form
         method="post"
         onSubmit={this.createOrEditLabel}
-        className="LabelMenu-CreateLabelPanel-Form"
+        className="BoardShowPage-CardModal-LabelMenu-CreateLabelPanel-Form"
       >
         <input type="text" placeholder="Card Text" value={this.state.labelText} onChange={this.handleChange}/>
-        <div className="LabelMenu-CreateLabelPanel-colors">{colorBoxes}</div>
+        <div className="BoardShowPage-CardModal-LabelMenu-CreateLabelPanel-colors">{colorBoxes}</div>
         <br/>
-        <div className="LabelMenu-CreateLabelPanel-controls">
+        <div className="BoardShowPage-CardModal-LabelMenu-CreateLabelPanel-controls">
           <Button
-            className="LabelMenu-CreateLabelPanel-button"
+            className="BoardShowPage-CardModal-LabelMenu-CreateLabelPanel-button"
             type="primary"
             submit={true}
           >
