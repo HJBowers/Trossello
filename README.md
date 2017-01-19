@@ -160,11 +160,11 @@ We're using `knex` to generate our SQL
 
   - Everything inside the Component directory should only be rendered as a sub component of the index component.
 
-  - Components with many sub components of the same type (ex: menu panes) can have a directory for organizing those Components, which should be named in lower case.
+  - Components with many sub components of the same type (ex: menu panes) can have a directory for organizing those components, which should be named in lower case.
 
 - Component file and Directory names should be in UpperCamelCase.
 
-- Class names for Components inside of a Component directory should start with the Component directory name.
+- Class names for components inside of a Component directory should start with the Component directory name.
 (ex: BoardShowPage/CardModal/LabelMenu -> .BoardShowPage-CardModal-LabelMenu)
 
 ### Contributors
