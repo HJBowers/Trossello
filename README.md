@@ -151,16 +151,16 @@ We're using `knex` to generate our SQL
 | deleteCard()         | delete | post | /api/cards/:cardId/delete                |
 
 ### Standards For Creating New Components
-- Each Component should exist in a separate file where possible.
+- Each new Component should exist in a separate file where possible.
 
 - Large Component files should be split up into sub components.
 
-- A Component with multiple sub components should be reorganized into a Component folder:
-  - The component sharing the folder name should be renamed to index.js and have an accompanying index.sass file.
+- A Component with multiple sub components should be reorganized into a Component directory:
+  - The Component sharing the folder name should be renamed to index.js and have an accompanying index.sass file.
 
-  - Everything inside the component Directory should only be rendered as a sub component of the index component.
+  - Everything inside the Component directory should only be rendered as a sub component of the index component.
 
-  - Components with many sub components of the same type (ex: menu panes) can have a Directory for organizing those components with a lower case name.
+  - Components with many sub components of the same type (ex: menu panes) can have a directory for organizing those Components, which should be named in lower case.
 
 - Component file and Directory names should be in UpperCamelCase.
 
