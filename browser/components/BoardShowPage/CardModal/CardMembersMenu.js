@@ -4,6 +4,7 @@ import Link from '../../Link'
 import Avatar from '../../Avatar'
 import Icon from '../../Icon'
 import commands from '../../../commands'
+import './CardMembersMenu.sass'
 
 export default class CardMembersMenu extends Component {
 

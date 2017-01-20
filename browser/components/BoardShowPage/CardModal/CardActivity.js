@@ -4,6 +4,7 @@ import CardComment from './CardComment'
 import Activity from '../Activity'
 import Link from '../../Link'
 import Icon from '../../Icon'
+import './CardActivity.sass'
 
 export default class CardActivity extends Component {
   static PropTypes = {

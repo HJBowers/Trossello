@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import Icon from '../../Icon'
 import ContentForm from '../ContentForm'
 import commands from '../../../commands'
+import './CardCommentForm.sass'
 
 export default class CardCommentForm extends Component {
   static PropTypes = {

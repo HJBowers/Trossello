@@ -1,4 +1,5 @@
 import React from 'react'
+import './CardModalShroud.sass'
 
 const CardModalShroud = ({onClose, children}) => {
   return <div className="BoardShowPage-CardModal-CardModalShroud-container">

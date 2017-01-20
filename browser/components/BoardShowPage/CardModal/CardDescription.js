@@ -4,6 +4,7 @@ import ContentForm from '../ContentForm'
 import Link from '../../Link'
 import Icon from '../../Icon'
 import commands from '../../../commands'
+import './CardDescription.sass'
 
 export default class CardDescription extends ToggleComponent {
   static propTypes = {

@@ -3,6 +3,7 @@ import TimeFromNow from '../../TimeFromNow'
 import ContentForm from '../ContentForm'
 import Link from '../../Link'
 import commands from '../../../commands'
+import './CardComment.sass'
 
 export default class CardComment extends Component {
 
