@@ -5,7 +5,7 @@ import CopyListPane from './Panes/CopyListPane.js'
 import ListActionsPane from './Panes/ListActionsPane.js'
 import MoveAllCardsPane from './Panes/MoveAllCardsPane.js'
 import MoveListPane from './Panes/MoveListPane.js'
-import './index.sass'
+import './ListActionsMenu.sass'
 
 export default class ListActionsMenu extends Component {
   static propTypes = {
